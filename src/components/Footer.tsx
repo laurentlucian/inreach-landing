@@ -10,7 +10,6 @@ const Footer = () => {
           <Text as="span" color="brand.200">
             full potential
           </Text>
-          .
         </Text>
         <Button colorScheme="brand" w="143px" disabled>
           Book a demo

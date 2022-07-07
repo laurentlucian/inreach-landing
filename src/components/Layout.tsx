@@ -8,7 +8,7 @@ type LayoutProps = {};
 const Layout = ({ children }: PropsWithChildren<LayoutProps>) => {
   return (
     <>
-      <Flex direction="column" align="center" maxW="1135px" mx="auto">
+      <Flex direction="column" align="center" maxW="1300px" mx="auto">
         <Nav />
         {children}
       </Flex>

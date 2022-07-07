@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <Layout>
-      <Flex direction="column" align="center" mx="auto" pt="40px" w={['auto', 'auto', '60ch']}>
+      <Flex direction="column" align="center" mx="auto" pt="40px">
         <Heading size={['md', 'lg']} textAlign="center" lineHeight="45px">
           Never Wait On{' '}
           <Text as="span" color="brand.200">
@@ -62,12 +62,12 @@ const App = () => {
             TRUSTED BY LEADERS IN INFLUENCER MARKETING
           </Text>
           <HStack spacing={7}>
-            {/* <Image src={SNACK} /> */}
-            {/* <Image src={SPACE} /> */}
-            <Image src={OUTPLAY} />
-            <Image src={DRUID} />
-            <Image src={PH} />
-            <Image src={LOUD} />
+            {/* <Image w="120px" src={SNACK} /> */}
+            {/* <Image w="77px" src={SPACE} /> */}
+            <Image w="30px" src={PH} />
+            <Image w="105px" src={OUTPLAY} />
+            <Image w="40px" src={DRUID} />
+            <Image w="70px" src={LOUD} />
           </HStack>
         </Stack>
       </Flex>
@@ -81,12 +81,8 @@ const App = () => {
       >
         {isLargeScreen && (
           <>
-            <Box w="800px">
-              <Image src={DEMO1} />
-            </Box>
-            <Box w="1000px">
-              <Image zIndex="-1" top="100px" src={BG} position="absolute" />
-            </Box>
+            <Image w="1000px" src={DEMO1} />
+            <Image zIndex="-1" w="1300px" top="100px" src={BG} position="absolute" />
           </>
         )}
 
@@ -122,9 +118,9 @@ const App = () => {
         </Text>
         <Stack
           direction={['column', 'column', 'row']}
-          spacing={['35px', '60px']}
+          spacing={['35px', '150px']}
           pt={['10px', '40px']}
-          pb={['40px', '0px']}
+          pb={['40px', '30px']}
         >
           <Stack align="center">
             <Image src={FAST} />
@@ -161,9 +157,9 @@ const App = () => {
         mt="60px"
         direction={{ base: 'column-reverse', lg: 'row' }}
         px={{ base: '20px', lg: '0px' }}
-        w={{ base: 'auto', lg: '980px' }}
+        w={{ base: 'auto', lg: '1000px' }}
       >
-        <Image src={DEMO2} mr={{ base: '0px', lg: '90px' }} mt={{ base: '20px', lg: '0px' }} />
+        <Image src={DEMO2} mr={{ base: '0px', lg: '150px' }} mt={{ base: '20px', lg: '0px' }} />
         <Flex direction="column">
           <Text fontSize="14px" color="brand.200" fontWeight="500">
             VISUALIZE
@@ -193,7 +189,7 @@ const App = () => {
       <Flex
         direction={{ base: 'column', lg: 'row' }}
         px={{ base: '20px', lg: '0px' }}
-        w={{ base: 'auto', lg: '980px' }}
+        w={{ base: 'auto', lg: '1000px' }}
         mt={{ base: '45px', lg: '100px' }}
       >
         <Flex direction="column">
@@ -206,9 +202,7 @@ const App = () => {
           <Flex direction="column" mt="25px" pt="15px" pb="12px" borderRadius="10px" px="17px" bg="#202020">
             <Image src={DRUID} w="35px" />
             <Text mt="12px" fontSize="13px">
-              ”I used to spend 15-20 hrs/wk managing our <br /> campaigns. With in.reach, it cut it to 5-8 hrs/
-              <br />
-              wk.”
+              ”I used to spend 15-20 hrs/wk managing our campaigns. With in.reach, it cut it to 5-8 hrs/ wk.”
             </Text>
             <Flex mt="20px">
               <Image borderRadius="50px" boxSize="40px" src={CLAUDIO} />
@@ -224,12 +218,12 @@ const App = () => {
         <Image src={DEMO3} mt={{ base: '40px', lg: '0px' }} />
       </Flex>
       <Flex
-        mt="60px"
+        mt={{ base: '60px', lg: '90px' }}
         direction={{ base: 'column-reverse', lg: 'row' }}
         px={{ base: '20px', lg: '0px' }}
-        w={{ base: 'auto', lg: '980px' }}
+        w={{ base: 'auto', lg: '1000px' }}
       >
-        <Image src={DEMO4} mr={{ base: '0px', lg: '90px' }} mt={{ base: '30px', lg: '0px' }} />
+        <Image src={DEMO4} mr={{ base: '0px', lg: '150px' }} mt={{ base: '30px', lg: '0px' }} />
         <Flex direction="column">
           <Text fontSize="14px" color="brand.200" fontWeight="500">
             ANALYZE
@@ -259,7 +253,7 @@ const App = () => {
       </Flex>
       <Flex
         borderRadius="10px"
-        mt="30px"
+        mt={{ base: '30px', lg: '100px' }}
         justify="space-between"
         align="center"
         p="20px"
