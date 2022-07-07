@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, HStack, Image, Stack, Text, useMediaQuery } from '@chakra-ui/react';
 import Layout from './components/Layout';
 import SNACK from './public/logos/snackclub.png';
 import PH from './public/logos/ph.png';
@@ -25,10 +25,12 @@ import TTV from './public/socials/twitch.png';
 import TK from './public/socials/tik_tok.png';
 
 const App = () => {
+  const [isLargeScreen] = useMediaQuery('(min-width: 1050px)');
+
   return (
     <Layout>
-      <Flex direction="column" align="center" mx="auto" pt="40px" w="60ch">
-        <Heading size="lg" textAlign="center" lineHeight="45px">
+      <Flex direction="column" align="center" mx="auto" pt="40px" w={['auto', 'auto', '60ch']}>
+        <Heading size={['md', 'lg']} textAlign="center" lineHeight="45px">
           Never Wait On{' '}
           <Text as="span" color="brand.200">
             Your Creators
@@ -36,10 +38,21 @@ const App = () => {
           To
           <br /> Send Metrics Again
         </Heading>
-        <Text textAlign="center" whiteSpace="normal" mb="15px">
-          Unlock your influencer marketing campaign by
-          <br /> collecting metrics directly from the social media as your
-          <br /> campaign runs.
+        <Text textAlign="center" whiteSpace="normal" my="15px">
+          {isLargeScreen ? (
+            <>
+              Unlock your influencer marketing campaign by <br />
+              collecting metrics directly from the social media as your <br />
+              campaign runs.
+            </>
+          ) : (
+            <>
+              Unlock your influencer marketing <br />
+              campaign by collecting metrics directly <br />
+              from the social media as your campaign <br />
+              runs.
+            </>
+          )}
         </Text>
         <Button colorScheme="brand" px="25px" disabled>
           Request a demo
@@ -58,26 +71,61 @@ const App = () => {
           </HStack>
         </Stack>
       </Flex>
-      <Stack align="center" pt="40px" position="relative">
-        <Box w="800px">
-          <Image src={DEMO1} />
-        </Box>
-        <Box w="1000px">
-          <Image zIndex="-1" top="100px" src={BG} position="absolute" />
-        </Box>
-        <Text as="h4" textAlign="center" fontSize="24px" fontWeight={600}>
-          <Text as="span" color="brand.200">
-            in
-          </Text>
-          .reach is a data platform
-          <br /> built for{' '}
-          <Text as="span" color="brand.200">
-            the next generation of creators
-          </Text>
-          .
+      <Stack
+        align="center"
+        mt={['70px', '20px']}
+        pt={['70px', '20px']}
+        position="relative"
+        w="100%"
+        bg={['#202020', 'transparent']}
+      >
+        {isLargeScreen && (
+          <>
+            <Box w="800px">
+              <Image src={DEMO1} />
+            </Box>
+            <Box w="1000px">
+              <Image zIndex="-1" top="100px" src={BG} position="absolute" />
+            </Box>
+          </>
+        )}
+
+        <Text as="h4" textAlign="center" fontSize={['18px', '24px']} fontWeight={600}>
+          {isLargeScreen ? (
+            <>
+              <Text as="span" color="brand.200">
+                in
+              </Text>
+              .reach is a data platform the
+              <br /> built for the{' '}
+              <Text as="span" color="brand.200">
+                next generation of creators
+              </Text>
+              .
+            </>
+          ) : (
+            <>
+              <Text as="span" color="brand.200">
+                in
+              </Text>
+              .reach is a data platform <br />
+              built for the{' '}
+              <Text as="span" color="brand.200">
+                next generation of creators
+              </Text>
+              .
+            </>
+          )}
         </Text>
-        <Text fontSize="14px">Connect your creators and visualize their reach. No PhD required.</Text>
-        <HStack spacing="60px" pt="40px">
+        <Text fontSize="14px" textAlign="center">
+          Connect your creators and visualize their reach. {!isLargeScreen && <br />} No PhD required.
+        </Text>
+        <Stack
+          direction={['column', 'column', 'row']}
+          spacing={['35px', '60px']}
+          pt={['10px', '40px']}
+          pb={['40px', '0px']}
+        >
           <Stack align="center">
             <Image src={FAST} />
             <Text fontSize="24px" fontWeight={600}>
@@ -107,10 +155,15 @@ const App = () => {
               <br /> will never leave our servers.
             </Text>
           </Stack>
-        </HStack>
+        </Stack>
       </Stack>
-      <Flex mt="60px" w="980px">
-        <Image src={DEMO2} mr="90px" />
+      <Flex
+        mt="60px"
+        direction={{ base: 'column-reverse', lg: 'row' }}
+        px={{ base: '20px', lg: '0px' }}
+        w={{ base: 'auto', lg: '980px' }}
+      >
+        <Image src={DEMO2} mr={{ base: '0px', lg: '90px' }} mt={{ base: '20px', lg: '0px' }} />
         <Flex direction="column">
           <Text fontSize="14px" color="brand.200" fontWeight="500">
             VISUALIZE
@@ -137,7 +190,12 @@ const App = () => {
           </Flex>
         </Flex>
       </Flex>
-      <Flex mt="100px">
+      <Flex
+        direction={{ base: 'column', lg: 'row' }}
+        px={{ base: '20px', lg: '0px' }}
+        w={{ base: 'auto', lg: '980px' }}
+        mt={{ base: '45px', lg: '100px' }}
+      >
         <Flex direction="column">
           <Text fontSize="14px" color="brand.200" fontWeight="500">
             MANAGE
@@ -163,10 +221,15 @@ const App = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Image src={DEMO3} />
+        <Image src={DEMO3} mt={{ base: '40px', lg: '0px' }} />
       </Flex>
-      <Flex mt="60px" w="980px">
-        <Image src={DEMO4} mr="90px" />
+      <Flex
+        mt="60px"
+        direction={{ base: 'column-reverse', lg: 'row' }}
+        px={{ base: '20px', lg: '0px' }}
+        w={{ base: 'auto', lg: '980px' }}
+      >
+        <Image src={DEMO4} mr={{ base: '0px', lg: '90px' }} mt={{ base: '30px', lg: '0px' }} />
         <Flex direction="column">
           <Text fontSize="14px" color="brand.200" fontWeight="500">
             ANALYZE
@@ -198,23 +261,32 @@ const App = () => {
         borderRadius="10px"
         mt="30px"
         justify="space-between"
+        align="center"
         p="20px"
-        w="926px"
+        direction={['column', 'row']}
+        w={{ base: 'auto', lg: '926px' }}
         sx={{
           background: 'linear-gradient(96.96deg, rgba(43, 235, 169, 0.2) 1.34%, rgba(0, 0, 0, 0) 53.7%), #202020;',
         }}
       >
-        <Text fontWeight="600" fontSize="20px">
+        <Text fontWeight="600" fontSize="20px" textAlign={['center', 'unset']}>
           Certified marketing partner of <br /> leading social platforms
         </Text>
-        <HStack spacing="25px">
+        <HStack
+          display={{ base: 'grid', lg: 'flex' }}
+          gridTemplate="1fr 1fr / 1fr 1fr 1fr"
+          gridRowGap="10px"
+          gridColumnGap={{ base: '25px', lg: '0px' }}
+          spacing={{ base: '0px', lg: '25px' }}
+          mt={{ base: '25px', sm: '0px', lg: '0px' }}
+          ml={{ base: '0px', sm: '20px', lg: '0px' }}
+        >
           <Image src={FB} />
           <Image src={TT} />
           <Image src={YT} />
           <Image src={DC} />
           <Image src={TTV} />
           <Image src={TK} />
-          <Image />
         </HStack>
       </Flex>
     </Layout>
