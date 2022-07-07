@@ -1,5 +1,5 @@
 import { Button, Divider, Flex, HStack, Image, Link, Stack, Text } from '@chakra-ui/react';
-import Logo from '../public/favicon.svg';
+import Logo from '/favicon.svg';
 
 const Footer = () => {
   return (

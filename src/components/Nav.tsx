@@ -1,5 +1,5 @@
 import { Button, Flex, HStack, Image, Link, Text, useMediaQuery } from '@chakra-ui/react';
-import Logo from '../public/favicon.svg';
+import Logo from '/favicon.svg';
 
 const Nav = () => {
   const [isLargeScreen] = useMediaQuery('(min-width: 1050px)');
