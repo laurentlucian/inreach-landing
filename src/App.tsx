@@ -98,10 +98,11 @@ const App = () => {
               <Text as="span" color="brand.200">
                 in
               </Text>
-              Reach is a data platform the
-              <br /> built for the{' '}
+              Reach is a data platform <br />
+              built for the{' '}
               <Text as="span" color="brand.200">
-                next generation of creators
+                next generation of <br />
+                creators
               </Text>
             </>
           ) : (
