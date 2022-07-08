@@ -11,16 +11,15 @@ import DEMO2 from './assets/demos/demo-2.png';
 import DEMO3 from './assets/demos/demo-3.png';
 import DEMO4 from './assets/demos/demo-4.png';
 import BG from './assets/bg.svg';
-import FAST from './assets/icons/fast.png';
-import CHECK from './assets/icons/check.png';
-import DOTS from './assets/icons/dots.png';
+import FAST from './assets/icons/fast.svg';
+import CHECK from './assets/icons/check.svg';
+import DOTS from './assets/icons/dots.svg';
 import BRUNO from './assets/bruno-avatar.png';
 import CLAUDIO from './assets/claudio-avatar.png';
 import MICHAEL from './assets/michael-avatar.png';
 import FB from './assets/socials/facebook.png';
 import TT from './assets/socials/twitter.png';
 import YT from './assets/socials/youtube.png';
-import DC from './assets/socials/discord.png';
 import TTV from './assets/socials/twitch.png';
 import TK from './assets/socials/tik_tok.png';
 
@@ -54,7 +53,14 @@ const App = () => {
             </>
           )}
         </Text>
-        <Button colorScheme="brand" px="25px" disabled>
+        <Button
+          as="a"
+          href="https://forms.gle/3WsV65JG84iX14RE6"
+          target="_blank"
+          textDecoration="none"
+          colorScheme="brand"
+          px="25px"
+        >
           Request a demo
         </Button>
         <Stack align="center" mt="30px">
@@ -92,24 +98,22 @@ const App = () => {
               <Text as="span" color="brand.200">
                 in
               </Text>
-              .reach is a data platform the
+              Reach is a data platform the
               <br /> built for the{' '}
               <Text as="span" color="brand.200">
                 next generation of creators
               </Text>
-              .
             </>
           ) : (
             <>
               <Text as="span" color="brand.200">
                 in
               </Text>
-              .reach is a data platform <br />
+              Reach is a data platform <br />
               built for the{' '}
               <Text as="span" color="brand.200">
                 next generation of creators
               </Text>
-              .
             </>
           )}
         </Text>
@@ -123,7 +127,7 @@ const App = () => {
           pb={['40px', '30px']}
         >
           <Stack align="center">
-            <Image src={FAST} />
+            <Image w="34px" src={FAST} />
             <Text fontSize="24px" fontWeight={600}>
               Fast
             </Text>
@@ -133,7 +137,7 @@ const App = () => {
             </Text>
           </Stack>
           <Stack align="center">
-            <Image src={CHECK} />
+            <Image w="38px" src={CHECK} />
             <Text fontSize="24px" fontWeight={600}>
               Easy
             </Text>
@@ -142,7 +146,7 @@ const App = () => {
             </Text>
           </Stack>
           <Stack align="center">
-            <Image src={DOTS} />
+            <Image w="46px" src={DOTS} />
             <Text fontSize="24px" fontWeight={600}>
               Secure
             </Text>
@@ -278,7 +282,6 @@ const App = () => {
           <Image src={FB} />
           <Image src={TT} />
           <Image src={YT} />
-          <Image src={DC} />
           <Image src={TTV} />
           <Image src={TK} />
         </HStack>
