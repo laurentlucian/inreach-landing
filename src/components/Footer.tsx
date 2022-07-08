@@ -11,7 +11,7 @@ const Footer = () => {
             full potential
           </Text>
         </Text>
-        <Button colorScheme="brand" w="143px" disabled>
+        <Button as="a" href="https://forms.gle/3WsV65JG84iX14RE6" target="_blank" colorScheme="brand" w="143px">
           Book a demo
         </Button>
       </Stack>
@@ -20,7 +20,10 @@ const Footer = () => {
         <HStack>
           <Image src={Logo} boxSize="20px" />
           <Text as="h1" fontSize="20px">
-            InReach
+            <Text as="span" color="brand.200">
+              in
+            </Text>
+            Reach
           </Text>
         </HStack>
         <Link href="https://app.inreach.gg/privacy-policy" fontSize="12px">

@@ -8,21 +8,18 @@ const Nav = () => {
       <HStack>
         <Image src={Logo} boxSize="20px" />
         <Text as="h1" fontSize="20px">
-          InReach
+          <Text as="span" color="brand.200">
+            in
+          </Text>
+          Reach
         </Text>
-        {/* <Text as="h1" fontSize="20px">
-                 <Text as="span" color="brand.200">
-                    in
-                  </Text>
-                .reach
-                </Text> */}
       </HStack>
       {isLargeScreen && (
         <HStack spacing={4}>
           <Button as="a" textDecoration="none" href="https://app.inreach.gg/" px={4} fontWeight="normal">
             Login
           </Button>
-          <Button px={5} colorScheme="brand" disabled>
+          <Button as="a" href="https://forms.gle/3WsV65JG84iX14RE6" target="_blank" px={5} colorScheme="brand">
             Try for free
           </Button>
         </HStack>
